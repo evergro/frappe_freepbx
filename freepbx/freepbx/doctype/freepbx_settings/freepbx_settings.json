@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "creation": "2026-10-26 09:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "section_connection",
+  "pbx_domain",
+  "wss_url",
+  "stun_server",
+  "section_dialing",
+  "country_code",
+  "column_break_dialing",
+  "national_prefix",
+  "international_prefix"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "description": "Turns on FreePBX as a calling medium in Frappe CRM.",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "section_connection",
+   "fieldtype": "Section Break",
+   "label": "Connection"
+  },
+  {
+   "description": "Host name agents register against, e.g. pbx.landscapers.evergro.co.za",
+   "fieldname": "pbx_domain",
+   "fieldtype": "Data",
+   "label": "PBX Domain",
+   "mandatory_depends_on": "eval:doc.enabled"
+  },
+  {
+   "description": "Leave empty to use wss://{PBX Domain}:8089/ws",
+   "fieldname": "wss_url",
+   "fieldtype": "Data",
+   "label": "WebSocket URL"
+  },
+  {
+   "default": "stun:stun.l.google.com:19302",
+   "description": "Helps browsers find a media path. Clear it to disable STUN.",
+   "fieldname": "stun_server",
+   "fieldtype": "Data",
+   "label": "STUN Server"
+  },
+  {
+   "fieldname": "section_dialing",
+   "fieldtype": "Section Break",
+   "label": "Dialing Rules"
+  },
+  {
+   "default": "27",
+   "description": "Numbers starting with +{country code} are dialed with the national prefix instead.",
+   "fieldname": "country_code",
+   "fieldtype": "Data",
+   "label": "Country Code"
+  },
+  {
+   "fieldname": "column_break_dialing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "+27821234567 is dialed as 0821234567.",
+   "fieldname": "national_prefix",
+   "fieldtype": "Data",
+   "label": "National Prefix"
+  },
+  {
+   "default": "00",
+   "description": "Other international numbers: +44... is dialed as 0044...",
+   "fieldname": "international_prefix",
+   "fieldtype": "Data",
+   "label": "International Prefix"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-26 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "FreePBX",
+ "name": "FreePBX Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
