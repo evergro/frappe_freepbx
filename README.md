@@ -23,7 +23,7 @@ because the CRM's call UI is compiled into its Vue app (`crm-freepbx.patch`).
 cd ~/frappe-bench
 
 # 1. CRM from your fork (the branch carrying crm-freepbx.patch)
-bench get-app https://github.com/<you>/crm --branch freepbx
+bench get-app https://github.com/evergro/crm --branch freepbx
 bench --site <site> install-app crm
 
 # 2. This app
@@ -37,7 +37,7 @@ If the CRM build fails with `Could not load ../../frappe/ui/src`, update Frappe 
 
 ## Configure
 
-1. **FreePBX Settings**: tick *Enabled*, PBX Domain `pbx.landscapers.evergro.co.za`
+1. **FreePBX Settings**: tick *Enabled*, PBX Domain `pbx.something.co.za`
    (WebSocket URL fills itself as `wss://<domain>:8089/ws`). Adjust the dialing rules
    if you are not in South Africa (`+27...` is dialed as `0...`).
 2. **CRM -> Settings -> Telephony** (or Desk -> CRM Telephony Agent): set the agent's
